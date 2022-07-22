@@ -19,8 +19,16 @@ import styled from "styled-components";
 /* 함수형 컴포넌트 사용 */
 const BucketList = ({ list }) => {
   const todos = list.map((todo, i) => <Item key={i}>{todo}</Item>);
+  const wrapper = React.useRef(null); // 리액트 훅 사용, 초기값 제공
+
+  console.log(wrapper);
+
+  window.setTimeout(() => {
+    // 1초 뒤에는?!
+    console.log(wrapper);
+  }, 1000);
   return (
-    <div>
+    <div ref={wrapper}>
       <Title>버킷리스트</Title>
       <Line></Line>
       {todos}

@@ -10,13 +10,23 @@ class App extends React.Component {
     this.state = {
       list: ["JS 파트 2 정리하기", "3주차까지 듣기", "자전 전화하기"],
     };
+
+    // this.text = React.createRef();
   }
+
+  // componentDidMount() {
+  //   console.log(this.text.current);
+  // }
 
   render() {
     return (
       <Wrapper>
         <Container>
           <BucketList list={this.state.list} />
+          {/* <div>
+            <input type='text' ref={this.text} />
+            <button></button>
+          </div> */}
         </Container>
       </Wrapper>
     );
