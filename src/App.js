@@ -1,6 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import BucketList from "./BucketList";
-import "./style.css";
+// import "./style.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,14 +14,33 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App'>
-        <div className='Container'>
+      <Wrapper>
+        <Container>
           <BucketList list={this.state.list} />
-        </div>
-      </div>
+        </Container>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+`;
+
+const Container = styled.div`
+  background-color: #fff;
+  margin: auto;
+  width: 50vw;
+  max-width: 350px;
+  height: 50vh;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 16px;
+  text-align: center;
+`;
 
 // function App() {
 //   return (

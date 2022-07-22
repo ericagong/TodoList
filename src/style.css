@@ -5,7 +5,7 @@
   display: flex;
 }
 
-.Container {
+/* .Container {
   background-color: #fff;
   margin: auto;
   width: 50vw;
@@ -15,9 +15,9 @@
   border-radius: 5px;
   padding: 16px;
   text-align: center;
-}
+} */
 
-.Line {
+/* .Line {
   margin: 20px;
   border: 1px solid slateblue;
 }
@@ -30,4 +30,4 @@ h1 {
   padding: 16px;
   margin: 10px;
   background-color: aliceblue;
-}
+} */

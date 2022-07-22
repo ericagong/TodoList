@@ -1,5 +1,6 @@
 /* 클래스형 컴포넌트 사용 */
 import React from "react";
+import styled from "styled-components";
 // class BucketList extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -17,19 +18,30 @@ import React from "react";
 
 /* 함수형 컴포넌트 사용 */
 const BucketList = ({ list }) => {
-  const todos = list.map((todo, i) => (
-    <div className='todo' key={i}>
-      {todo}
-    </div>
-  ));
+  const todos = list.map((todo, i) => <Item key={i}>{todo}</Item>);
   return (
     <div>
-      <h1>버킷리스트</h1>
-      <hr className='Line' />
+      <Title>버킷리스트</Title>
+      <Line></Line>
       {todos}
     </div>
   );
 };
+
+const Line = styled.hr`
+  margin: 20px;
+  border: 1px solid slateblue;
+`;
+
+const Title = styled.h1`
+  color: slateblue;
+`;
+
+const Item = styled.div`
+  padding: 16px;
+  margin: 10px;
+  background-color: aliceblue;
+`;
 
 // function BucketList(props) {
 // 	return (
