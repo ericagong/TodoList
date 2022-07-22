@@ -1,0 +1,33 @@
+.App {
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.Container {
+  background-color: #fff;
+  margin: auto;
+  width: 50vw;
+  max-width: 350px;
+  height: 50vh;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 16px;
+  text-align: center;
+}
+
+.Line {
+  margin: 20px;
+  border: 1px solid slateblue;
+}
+
+h1 {
+  color: slateblue;
+}
+
+.todo {
+  padding: 16px;
+  margin: 10px;
+  background-color: aliceblue;
+}
