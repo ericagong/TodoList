@@ -10,7 +10,7 @@ const App = (props) => {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route exact path='/detail'>
+        <Route exact path='/detail/:index'>
           <Detail />
         </Route>
         <Route>
