@@ -1,57 +1,33 @@
-import logo from "./logo.svg";
-import "./App.css";
-import React from "react";
-import Text from "./Text";
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-    this.circle = React.createRef(null);
-  }
-
-  componentDidMount() {
-    console.log(this.circle);
-    this.circle.current.addEventListener("mouseover", this.hoverEvent);
-  }
-
-  hoverEvent = (e) => {
-    console.log(e.target); // 이벤트 객체에서 이벤트가 발생한 타겟 가져옴.
-    console.log(this.circle.current);
-    this.circle.current.style.backgroundColor = "red";
-  };
-
-  componentWillUnmount() {
-    this.circle.current.removeEventListener("mouseover", this.hoverEvent);
-  }
-
-  render() {
-    return (
-      <div style={{ width: "100vw", height: "100vh", textAlign: "center" }}>
-        <Text />
-        <div
-          style={{
-            margin: "auto",
-            width: "250px",
-            height: "250px",
-            background: "green",
-            borderRadius: "250px",
-          }}
-          ref={this.circle}
-        ></div>
-      </div>
-    );
-  }
-}
-
-export default App;
-
 // import React from "react";
 // import styled from "styled-components";
 // import BucketList from "./BucketList";
 // import "./style.css";
 
+import { Link, Route } from "react-router-dom";
+import Home from "./Home";
+import Cat from "./Cat";
+import Dog from "./Dog";
+
+const App = (props) => {
+  return (
+    <div className='App'>
+      <div>
+        <Link to='/'>Home으로 가기</Link>
+        <Link to='/cat'>Cat으로 가기</Link>
+        <Link to='/dog'>Dog으로 가기</Link>
+      </div>
+      <Route path='/' component={Home} exact />
+      <Route path='/cat/:cat_name' component={Cat} exact>
+        {/* <Cat /> */}
+      </Route>
+      <Route path='/dog' exact>
+        <Dog />
+      </Route>
+    </div>
+  );
+};
+
+export default App;
 // const App = (props) => {
 //   const [list, setList] = React.useState([
 //     "JS 파트 2 정리하기",
